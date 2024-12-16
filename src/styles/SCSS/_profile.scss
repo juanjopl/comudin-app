@@ -1,0 +1,279 @@
+@import "colors";
+.fondo {
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+#options {
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-primario;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    width: 300px;
+    height: 120px;
+    animation: mostrarPopup 0.3s ease-out;
+    border: 2px solid $color-primarioB1;
+    color: $color-secundarioB1;
+    a {
+        color: $color-secundarioB1;
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: $color-primarioB1;
+        transition: .2s ease-in;
+        &:hover {
+            background: $color-primarioA1;
+            color: $color-primario; 
+        }
+    }
+    #exitButton {
+        font-size: 18px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        cursor: pointer;
+    }
+}
+#stats {
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-primario;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    width: 300px;
+    height: auto;
+    animation: mostrarPopup 0.3s ease-out;
+    border: 2px solid $color-primarioB1;
+    color: $color-secundarioB1;
+    #exitButton2 {
+        font-size: 18px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .result {
+        margin-top: 20px;
+        .userCard {
+            display: flex;
+            align-items: center;
+            transition: all .2s ease;
+            border-radius: 5px;
+            cursor: pointer;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin: 10px;
+            }
+            #follower {
+                color: $color-secundarioB1;
+                background-color: none;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+            &:hover {
+                background-color: $color-primarioA2;
+            }
+        }
+    }
+}
+#update {
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-primario;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    width: 300px;
+    height: auto;
+    animation: mostrarPopup 0.3s ease-out;
+    border: 2px solid $color-primarioB1;
+    color: $color-secundarioB1;
+    #exitButton3 {
+        font-size: 18px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .dataUpdate {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .updateBox {
+            margin-top: 5px;
+            span {
+                font-size: 1rem;
+            }
+            input {
+                margin: 5px 0px 5px 0px;
+                width: 100%;
+            }
+            select {
+                border-radius: 5px;
+                margin: 5px 0px 5px 0px;
+                width: 100%;
+            }
+            &:nth-child(3) {
+                margin-left: 48px;
+                margin-right: 48px;
+            }
+        }
+    }
+}
+.container {
+    width: 100%;
+    height: 100vh;
+}
+.profileData {
+    display: flex;
+    .profile-info {
+        width: 30%;
+        background: $color-primario;
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 12px;
+        color: $color-secundarioB1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .profile-pic {
+            margin-left: 10px;
+            text-align: center;
+            form {
+                label {
+                    margin: 0;
+                    img {
+                        width: 5rem;
+                        height: 5rem;
+                        border-radius: 50%;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                span {
+                    display: none;
+                    background-color: $color-primarioB1;
+                    padding: 3px 3px 0px 3px;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: 60px;
+                    left: 50px;
+                }
+                label:hover + span {
+                    display: block;
+                }
+            }
+        }
+        #actualName{
+            margin: 2px 0px 0px 10px;
+            text-align: center;
+        }
+        #region {
+            font-size: 14px;
+            margin: 2px 0px 0px 10px;
+            text-align: center;
+        }
+        @media (max-width: 400px) {
+            font-size: 14px;
+        }
+    }
+    .profile-followers {
+        width: 70%;
+        background: $color-primario;
+        padding-top: 10px;
+        padding-right: 10px;
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            justify-content: center;
+            li {
+                text-align: center;
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+        button {
+            width: 45%;
+            height: 25px;
+            justify-content: center;
+            display: block;
+            color: $color-secundarioB1;
+            background: $color-primarioB1;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-top: 45px;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+            &:hover {
+                background: $color-primarioA1;
+                color: $color-primario; 
+            }
+        }
+        @media (max-width: 400px) {
+            font-size: 14px;
+        }
+    }
+}
+#profilePic {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.profilePosts {
+    .uploadedMessage {
+        position: absolute;
+        background-color: $color-primarioA1;
+        color: $color-primarioB1;
+        padding: 10px;
+        border-radius: 5px;
+        left: 40%;
+        top: 2%;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: .5s; /* Duración de la animación en segundos */
+    animation-fill-mode: forwards; /* Mantener el último estado de la animación */
+}

@@ -1,0 +1,142 @@
+@import "colors";
+.content {
+    .fondo {
+        backdrop-filter: blur(3px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+        z-index: 999; /* Asegura que el fondo esté detrás del popup pero delante de otros elementos */
+    }
+    .post {
+        border: 1px solid black;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-primario;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 5px;
+        width: 300px;
+        animation: mostrarPopup 0.3s ease-out;
+        border: 2px solid $color-primarioB1;
+        #exitButton {
+            font-size: 18px;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .selectPost {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            margin-left: 1rem;
+            .active {
+                color: $color-secundarioB1;
+                text-decoration: underline 5px solid $color-secundarioB1;
+                cursor: pointer;
+            }
+            .disabled {
+                color: $color-secundarioB3;
+                text-decoration: underline 5px solid $color-secundarioB3;
+                cursor: pointer;
+            }
+        }
+        .postForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .post1 {
+                .picsPost {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    height: 200px;
+                    .icon {
+                        color: $color-secundarioB3;
+                        line-height: 75px;
+                        font-size: 5rem;
+                        transition: color 0.3s ease;
+                        cursor: pointer;
+                        &:hover {
+                            color: $color-secundarioB2;
+                        }
+                    }
+                    img {
+                        position: absolute;
+                        width: 220px;
+                        height: 220px;
+                        border-radius: 5px;
+                    }
+                }
+                .deleteInstaPhoto {
+                    cursor: pointer;
+                }
+                #txtDescrip {
+                    margin-top: 5px;
+                    background-color: $color-primarioB1;
+                    color: $color-secundarioB2;
+                    resize: none;
+                    width: 100%;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+                #ubiPost {
+                    background-color: $color-primarioB1;
+                    color: $color-secundarioB2;
+                    padding: 5px;
+                    width: 100%;
+                }
+            }
+            .post2 {
+                margin-top: 10px;
+                width: 100%;
+                #messageShortPost {
+                    margin-top: 20px;
+                    background-color: $color-primarioB1;
+                    color: $color-secundarioB2;
+                    resize: none;
+                    width: 100%;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+    .selectHomePost {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding-top: 10px;
+        background-color: $color-primario;
+        height: 40px;
+        .active {
+            color: $color-secundarioB1;
+            text-decoration: underline 5px solid $color-secundarioB1;
+            cursor: pointer;
+        }
+        .disabled {
+            color: $color-secundarioB3;
+            text-decoration: underline 5px solid $color-secundarioB3;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes mostrarPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

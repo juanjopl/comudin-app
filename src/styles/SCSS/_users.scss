@@ -1,0 +1,56 @@
+@import "colors";
+
+.linkArrowBackChat {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    .arrowBackChat {
+        color: $color-secundarioB1;
+        font-size: 22px;
+    }
+}
+
+.listUser {
+    display: flex;
+    cursor: pointer;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: all .2s ease;
+    .userRow1 {
+        padding-top: 3px;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+    .userRow2 {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1.2rem;
+        padding-top: 5px;
+        width: 100%;
+        span {
+            color: $color-secundarioB1;
+            margin-bottom: 5px;
+        }
+        P {
+            color: $color-secundarioB2;
+        }
+    }
+    &:hover {
+        background-color: $color-primarioA2;
+    }
+    .userRow3 {
+        display: flex;
+        align-items: center;
+        span {
+            color: $color-secundarioB1;
+            font-size: 15px;
+        }
+    }
+}
+.listUser.hidden {
+    display: none;
+}

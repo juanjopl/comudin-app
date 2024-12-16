@@ -1,0 +1,29 @@
+@import "index";
+@import "fuente";
+@import "nav";
+@import "profile";
+@import "search";
+@import "colors";
+@import "users";
+@import "chat";
+@import "home";
+@import "posts";
+* {
+    font-family: $fuente;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.allbody {
+    overflow: hidden;
+}
+.content {
+    margin-top: 70px;
+    color: #fff;
+}
+body {
+    background-color: $color-primarioB1;
+}

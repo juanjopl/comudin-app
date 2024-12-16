@@ -1,0 +1,40 @@
+@import "colors";
+.search {
+    #searchInput {
+        width: 50%;
+        height: 1.8rem;
+        background-color: $color-secundarioB2;
+        @media (max-width: 500px) {
+            width: 70%;
+        }
+        @media (min-width: 1200px) {
+            width: 30%;
+        }
+    }
+    .results {
+        .userCard {
+            display: flex;
+            align-items: center;
+            transition: all .2s ease;
+            cursor: pointer;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin: 10px;
+            }
+            a {
+                color: $color-secundarioB1;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+            p {
+                color: $color-secundarioB1;
+                margin-left: 5px;
+            }
+            &:hover {
+                background-color: $color-primarioA2;
+            }
+        }
+    }
+}
